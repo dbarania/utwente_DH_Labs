@@ -1,0 +1,157 @@
+|Counter
+clk => clk.IN1
+reset => reset.IN1
+LEDR[0] << main_counter[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << main_counter[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << main_counter[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << main_counter[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << main_counter[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] << main_counter[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] << main_counter[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] << main_counter[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] << main_counter[8].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] << main_counter[9].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] << BinTo7Seg:seg0.seg
+HEX0[1] << BinTo7Seg:seg0.seg
+HEX0[2] << BinTo7Seg:seg0.seg
+HEX0[3] << BinTo7Seg:seg0.seg
+HEX0[4] << BinTo7Seg:seg0.seg
+HEX0[5] << BinTo7Seg:seg0.seg
+HEX0[6] << BinTo7Seg:seg0.seg
+HEX1[0] << BinTo7Seg:seg1.seg
+HEX1[1] << BinTo7Seg:seg1.seg
+HEX1[2] << BinTo7Seg:seg1.seg
+HEX1[3] << BinTo7Seg:seg1.seg
+HEX1[4] << BinTo7Seg:seg1.seg
+HEX1[5] << BinTo7Seg:seg1.seg
+HEX1[6] << BinTo7Seg:seg1.seg
+HEX2[0] << BinTo7Seg:seg2.seg
+HEX2[1] << BinTo7Seg:seg2.seg
+HEX2[2] << BinTo7Seg:seg2.seg
+HEX2[3] << BinTo7Seg:seg2.seg
+HEX2[4] << BinTo7Seg:seg2.seg
+HEX2[5] << BinTo7Seg:seg2.seg
+HEX2[6] << BinTo7Seg:seg2.seg
+HEX3[0] << BinTo7Seg:seg3.seg
+HEX3[1] << BinTo7Seg:seg3.seg
+HEX3[2] << BinTo7Seg:seg3.seg
+HEX3[3] << BinTo7Seg:seg3.seg
+HEX3[4] << BinTo7Seg:seg3.seg
+HEX3[5] << BinTo7Seg:seg3.seg
+HEX3[6] << BinTo7Seg:seg3.seg
+
+
+|Counter|SlowerClock:clock_divider
+clk => slow_clk~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+clk => counter[20].CLK
+clk => counter[21].CLK
+clk => counter[22].CLK
+clk => counter[23].CLK
+clk => counter[24].CLK
+clk => counter[25].CLK
+reset => slow_clk~reg0.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+reset => counter[20].ACLR
+reset => counter[21].ACLR
+reset => counter[22].ACLR
+reset => counter[23].ACLR
+reset => counter[24].ACLR
+reset => counter[25].ACLR
+slow_clk <= slow_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|BinTo7Seg:seg0
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|BinTo7Seg:seg1
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|BinTo7Seg:seg2
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Counter|BinTo7Seg:seg3
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

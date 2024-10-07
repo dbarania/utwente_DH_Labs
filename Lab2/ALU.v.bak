@@ -1,0 +1,8 @@
+module ALU(
+	input signed [2:0] A,
+	input signed [2:0] B,
+	input [2:0] opcode,
+	output [2:0] result,
+	output overflow
+);
+

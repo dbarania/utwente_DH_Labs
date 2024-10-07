@@ -1,0 +1,39 @@
+module tb_FullAdder;
+    // Inputs to the FullAdder module
+    reg [3:0] A;
+    reg [3:0] B;
+    
+    // Outputs from the FullAdder module
+    wire [6:0] seg0; // Ones place 7-segment output
+    wire [6:0] seg1; // Tens place 7-segment output
+
+    // Instantiate the FullAdder module
+    FullAdder uut (
+        .A(A),
+        .B(B),
+        .seg0(seg0),
+        .seg1(seg1)
+    );
+
+    // Test stimulus
+    initial begin
+        // Test Case 1: A = 4, B = 3 (sum = 7)
+        A = 4'b0100; B = 4'b0011;
+        #10;
+        
+        // Test Case 2: A = 9, B = 1 (sum = 10)
+        A = 4'b1001; B = 4'b0001;
+        #10;
+        
+        // Test Case 3: A = 7, B = 6 (sum = 13)
+        A = 4'b0111; B = 4'b0110;
+        #10;
+
+        // Test Case 4: A = 15, B = 15 (sum = 30)
+        A = 4'b1111; B = 4'b1111;
+        #10;
+
+        // End simulation
+        $stop;
+    end
+endmodule

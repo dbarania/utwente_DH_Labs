@@ -1,0 +1,11 @@
+//module FullAdder(input [3:0]  A,
+//					  input [3:0] B,
+//					  S1, S2);
+//
+//input [3:0] A;
+//input [3:0] B;
+//output 
+module FullAdder(input wire [3:0]SW, output [3:0]LEDR);
+	assign LEDR = SW;
+endmodule
+	

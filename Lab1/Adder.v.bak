@@ -1,0 +1,13 @@
+module Adder(
+	input signed [3:0] A,
+	input signed [3:0] B,
+	output [6:0] S,
+	output overflow);
+	
+	wire signed [4:0] full_sum;
+	assign full_sum = A + B;
+	
+	 assign sum = full_sum[3:0];
+    assign overflow_led = (a[3] == b[3]) && (sum[3] != a[3]);
+endmodule
+	

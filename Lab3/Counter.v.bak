@@ -1,0 +1,10 @@
+module Counter(
+	input clk,
+	input reset,
+	output LEDR,
+	output HEX0,
+	output HEX1,
+	output HEX2,
+	output HEX3
+	);
+	

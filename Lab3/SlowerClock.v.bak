@@ -1,0 +1,5 @@
+module SlowerClock(
+	input clk,
+	input reset,
+	output reg slow_clk
+);

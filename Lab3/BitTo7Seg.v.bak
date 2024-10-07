@@ -1,0 +1,6 @@
+module BinTo7Seg(
+	input [3:0] binary,
+	output [6:0] seg
+);
+
+	
