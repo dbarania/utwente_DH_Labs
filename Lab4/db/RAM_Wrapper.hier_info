@@ -1,0 +1,69 @@
+|RAM_Wrapper
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+KEY[0] => KEY[0].IN1
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => KEY[3].IN1
+CLOCK_50 => CLOCK_50.IN1
+LEDR[0] << RAM:ram.data_out
+LEDR[1] << RAM:ram.data_out
+LEDR[2] << RAM:ram.data_out
+LEDR[3] << RAM:ram.data_out
+
+
+|RAM_Wrapper|RAM:ram
+data_in[0] => memory.DATAA
+data_in[1] => memory.DATAA
+data_in[2] => memory.DATAA
+data_in[3] => memory.DATAA
+address[0] => memory.waddr_a[0].DATAIN
+address[0] => memory.WADDR
+address[0] => memory.RADDR
+address[1] => memory.waddr_a[1].DATAIN
+address[1] => memory.WADDR1
+address[1] => memory.RADDR1
+address[2] => memory.waddr_a[2].DATAIN
+address[2] => memory.WADDR2
+address[2] => memory.RADDR2
+write_enable[0] => data_out.OUTPUTSELECT
+write_enable[0] => data_out.OUTPUTSELECT
+write_enable[0] => data_out.OUTPUTSELECT
+write_enable[0] => data_out.OUTPUTSELECT
+write_enable[0] => memory.DATAA
+reset[0] => memory.OUTPUTSELECT
+reset[0] => memory.OUTPUTSELECT
+reset[0] => memory.OUTPUTSELECT
+reset[0] => memory.OUTPUTSELECT
+reset[0] => memory.OUTPUTSELECT
+reset[0] => data_out[0]~reg0.ENA
+reset[0] => data_out[1]~reg0.ENA
+reset[0] => data_out[2]~reg0.ENA
+reset[0] => data_out[3]~reg0.ENA
+clk => memory.we_a.CLK
+clk => memory.waddr_a[2].CLK
+clk => memory.waddr_a[1].CLK
+clk => memory.waddr_a[0].CLK
+clk => memory.data_a[3].CLK
+clk => memory.data_a[2].CLK
+clk => memory.data_a[1].CLK
+clk => memory.data_a[0].CLK
+clk => data_out[0]~reg0.CLK
+clk => data_out[1]~reg0.CLK
+clk => data_out[2]~reg0.CLK
+clk => data_out[3]~reg0.CLK
+clk => memory.CLK0
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
