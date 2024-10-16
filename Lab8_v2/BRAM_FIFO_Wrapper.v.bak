@@ -1,0 +1,2 @@
+module BRAM_FIFO_Wrapper();
+endmodule

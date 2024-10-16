@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Oct 16 20:16:21 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : BRAM
+Top-level Entity Name : BRAM
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 44
+Total pins : 34
+Total virtual pins : 0
+Total block memory bits : 2,048
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

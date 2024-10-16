@@ -1,0 +1,35 @@
+module FIFO(
+    input wire [3:0] data_in,
+    input wire wirte_req,
+    input wire read_req,
+    input wire clk,
+    input wire reset,
+    output reg [3:0] data_out,
+    output wire data_ready,
+    output reg [8:0] element_counter
+);
+
+    reg [3:0] memory [511:0];
+    reg [8:0] read_address;
+    reg [8:0] write_address;
+
+    always @(posedge clk ) begin
+        if (!reset) begin
+            read_address <= 9'b0;
+            write_address <= 9'b0;
+            element_counter <= 9'b0;
+            data_out <= 4'b0;
+        end
+        else if(!wirte_req && ~&element_counter) begin
+            memory[write_address] <= data_in;
+            write_address <= write_address + 9'b1;
+            element_counter <= element_counter + 9'b1;
+        end
+        else if(!read_req && element_counter) begin
+            data_out <= memory[read_address];
+            read_address <= read_address + 9'b1;
+            element_counter <= element_counter - 9'b1;
+        end
+    end
+    assign data_ready = (|element_counter && ~&element_counter);
+endmodule

@@ -1,0 +1,13 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/damia/Studia/DigitalHardwareUT/Lab8 {C:/Users/damia/Studia/DigitalHardwareUT/Lab8/BRAM.v}
+vlog -vlog01compat -work work +incdir+C:/Users/damia/Studia/DigitalHardwareUT/Lab8 {C:/Users/damia/Studia/DigitalHardwareUT/Lab8/FIFO_block.v}
+vlog -vlog01compat -work work +incdir+C:/Users/damia/Studia/DigitalHardwareUT/Lab8 {C:/Users/damia/Studia/DigitalHardwareUT/Lab8/Bin2Seg.v}
+vlog -vlog01compat -work work +incdir+C:/Users/damia/Studia/DigitalHardwareUT/Lab8/output_files {C:/Users/damia/Studia/DigitalHardwareUT/Lab8/output_files/WriteRequets.v}
+vlog -vlog01compat -work work +incdir+C:/Users/damia/Studia/DigitalHardwareUT/Lab8 {C:/Users/damia/Studia/DigitalHardwareUT/Lab8/ReadRequets.v}
+

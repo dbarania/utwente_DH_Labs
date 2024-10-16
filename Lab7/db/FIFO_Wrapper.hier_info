@@ -1,0 +1,165 @@
+|FIFO_Wrapper
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => ~NO_FANOUT~
+KEY[3] => KEY[3].IN1
+CLOCK_50 => CLOCK_50.IN1
+LEDR[0] << FIFO:fifo.data_out
+LEDR[1] << FIFO:fifo.data_out
+LEDR[2] << FIFO:fifo.data_out
+LEDR[3] << FIFO:fifo.data_out
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << FIFO:fifo.data_ready
+HEX0[0] << BinTo7Seg:S0.seg
+HEX0[1] << BinTo7Seg:S0.seg
+HEX0[2] << BinTo7Seg:S0.seg
+HEX0[3] << BinTo7Seg:S0.seg
+HEX0[4] << BinTo7Seg:S0.seg
+HEX0[5] << BinTo7Seg:S0.seg
+HEX0[6] << BinTo7Seg:S0.seg
+HEX1[0] << BinTo7Seg:S1.seg
+HEX1[1] << BinTo7Seg:S1.seg
+HEX1[2] << BinTo7Seg:S1.seg
+HEX1[3] << BinTo7Seg:S1.seg
+HEX1[4] << BinTo7Seg:S1.seg
+HEX1[5] << BinTo7Seg:S1.seg
+HEX1[6] << BinTo7Seg:S1.seg
+HEX2[0] << BinTo7Seg:S2.seg
+HEX2[1] << BinTo7Seg:S2.seg
+HEX2[2] << BinTo7Seg:S2.seg
+HEX2[3] << BinTo7Seg:S2.seg
+HEX2[4] << BinTo7Seg:S2.seg
+HEX2[5] << BinTo7Seg:S2.seg
+HEX2[6] << BinTo7Seg:S2.seg
+
+
+|FIFO_Wrapper|FIFO:fifo
+data_in[0] => memory.data_a[0].DATAIN
+data_in[0] => memory.DATAIN
+data_in[1] => memory.data_a[1].DATAIN
+data_in[1] => memory.DATAIN1
+data_in[2] => memory.data_a[2].DATAIN
+data_in[2] => memory.DATAIN2
+data_in[3] => memory.data_a[3].DATAIN
+data_in[3] => memory.DATAIN3
+write_req => write_req_edge.IN1
+write_req => prev_write_req.DATAIN
+read_req => read_req_edge.IN1
+read_req => prev_read_req.DATAIN
+clk => memory.we_a.CLK
+clk => memory.waddr_a[8].CLK
+clk => memory.waddr_a[7].CLK
+clk => memory.waddr_a[6].CLK
+clk => memory.waddr_a[5].CLK
+clk => memory.waddr_a[4].CLK
+clk => memory.waddr_a[3].CLK
+clk => memory.waddr_a[2].CLK
+clk => memory.waddr_a[1].CLK
+clk => memory.waddr_a[0].CLK
+clk => memory.data_a[3].CLK
+clk => memory.data_a[2].CLK
+clk => memory.data_a[1].CLK
+clk => memory.data_a[0].CLK
+clk => data_out[0]~reg0.CLK
+clk => data_out[1]~reg0.CLK
+clk => data_out[2]~reg0.CLK
+clk => data_out[3]~reg0.CLK
+clk => el_counter[0].CLK
+clk => el_counter[1].CLK
+clk => el_counter[2].CLK
+clk => el_counter[3].CLK
+clk => el_counter[4].CLK
+clk => el_counter[5].CLK
+clk => el_counter[6].CLK
+clk => el_counter[7].CLK
+clk => el_counter[8].CLK
+clk => write_address[0].CLK
+clk => write_address[1].CLK
+clk => write_address[2].CLK
+clk => write_address[3].CLK
+clk => write_address[4].CLK
+clk => write_address[5].CLK
+clk => write_address[6].CLK
+clk => write_address[7].CLK
+clk => write_address[8].CLK
+clk => read_address[0].CLK
+clk => read_address[1].CLK
+clk => read_address[2].CLK
+clk => read_address[3].CLK
+clk => read_address[4].CLK
+clk => read_address[5].CLK
+clk => read_address[6].CLK
+clk => read_address[7].CLK
+clk => read_address[8].CLK
+clk => prev_reset.CLK
+clk => prev_read_req.CLK
+clk => prev_write_req.CLK
+clk => memory.CLK0
+reset => reset_edge.IN1
+reset => prev_reset.DATAIN
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_ready <= data_ready.DB_MAX_OUTPUT_PORT_TYPE
+element_counter[0] <= el_counter[0].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[1] <= el_counter[1].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[2] <= el_counter[2].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[3] <= el_counter[3].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[4] <= el_counter[4].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[5] <= el_counter[5].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[6] <= el_counter[6].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[7] <= el_counter[7].DB_MAX_OUTPUT_PORT_TYPE
+element_counter[8] <= el_counter[8].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO_Wrapper|BinTo7Seg:S0
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO_Wrapper|BinTo7Seg:S1
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FIFO_Wrapper|BinTo7Seg:S2
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+seg[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
